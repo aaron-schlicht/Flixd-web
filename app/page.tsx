@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FaApple } from "react-icons/fa";
 
 export default function Home() {
@@ -63,12 +64,14 @@ export default function Home() {
           marginTop: "2.5rem",
         }}
       >
-        <img
+        <Image
           src="/AppLogo.png"
           alt="Flixd App Logo"
+          width={96}
+          height={96}
+          priority
+          className="flixd-logo"
           style={{
-            width: 96,
-            height: 96,
             borderRadius: "24px",
             boxShadow: "0 2px 16px rgba(0,0,0,0.22)",
             background: "#23264A",
