@@ -1,103 +1,204 @@
-import Image from "next/image";
+import Link from "next/link";
+import { FaApple } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <main
+      style={{
+        minHeight: "100vh",
+        background: "#15182D",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "flex-start",
+        padding: "2.5rem 1rem 1rem 1rem",
+        position: "relative",
+      }}
+    >
+      <style>{`
+        @keyframes flixdFadeSlideUp {
+          0% {
+            opacity: 0;
+            transform: translateY(32px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .flixd-animate {
+          opacity: 0;
+          animation: flixdFadeSlideUp 0.7s cubic-bezier(0.4,0.2,0.2,1) forwards;
+        }
+        .flixd-animate-1 { animation-delay: 0.1s; }
+        .flixd-animate-2 { animation-delay: 0.3s; }
+        .flixd-animate-3 { animation-delay: 0.5s; }
+        .flixd-animate-4 { animation-delay: 0.7s; }
+        @media (min-width: 640px) {
+          .flixd-header {
+            margin-top: 4.5rem !important;
+          }
+          .flixd-logo-title {
+            font-size: 4.5rem !important;
+          }
+          .flixd-h1 {
+            font-size: 2.5rem !important;
+            margin-bottom: 5rem !important;
+          }
+          .flixd-desc {
+            font-size: 1.35rem !important;
+          }
+          .flixd-footer-links a, .flixd-footer-links .flixd-privacy-link {
+            font-size: 1.15rem !important;
+          }
+        }
+      `}</style>
+      <div
+        className="flixd-header flixd-animate flixd-animate-1"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "1.8rem",
+          marginBottom: "1rem",
+          marginTop: "2.5rem",
+        }}
+      >
+        <img
+          src="/AppLogo.png"
+          alt="Flixd App Logo"
+          style={{
+            width: 96,
+            height: 96,
+            borderRadius: "24px",
+            boxShadow: "0 2px 16px rgba(0,0,0,0.22)",
+            background: "#23264A",
+            objectFit: "cover",
+          }}
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <span
+          className="flixd-logo-title"
+          style={{
+            color: "#fff",
+            fontSize: "3.5rem",
+            fontWeight: 900,
+            letterSpacing: "-2px",
+            lineHeight: 1.08,
+          }}
+        >
+          Flixd
+        </span>
+      </div>
+      <h1
+        className="flixd-h1 flixd-animate flixd-animate-2"
+        style={{
+          color: "#fff",
+          fontSize: "1.5rem",
+          fontWeight: 700,
+          marginBottom: "4rem",
+          letterSpacing: "-1px",
+          textAlign: "center",
+        }}
+      >
+        Your home for movie discovery
+      </h1>
+      <p
+        className="flixd-desc flixd-animate flixd-animate-3"
+        style={{
+          color: "#B0B3C7",
+          fontSize: "1.1rem",
+          marginBottom: "2rem",
+          textAlign: "center",
+          maxWidth: 500,
+        }}
+      >
+        The easiest way to discover movies on your streaming services. Download
+        the app now!
+      </p>
+      <a
+        className="flixd-animate flixd-animate-4 transition-transform duration-200 hover:scale-102 hover:shadow-xl"
+        href="https://apps.apple.com/us/app/flixd/id6446706371?uo=4"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "0.7rem",
+          background: "#000",
+          color: "#fff",
+          fontWeight: 600,
+          padding: "0.85rem 2.1rem 0.85rem 1.5rem",
+          borderRadius: "16px",
+          fontSize: "1.13rem",
+          textDecoration: "none",
+          marginBottom: "2rem",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
+          border: "1px solid #222",
+        }}
+      >
+        <FaApple size={24} style={{ marginRight: "0.5rem" }} />
+        <span
+          style={{
+            fontWeight: 700,
+            fontSize: "1.13rem",
+            letterSpacing: "-0.5px",
+          }}
+        >
+          Download on the App Store
+        </span>
+      </a>
+      <footer
+        style={{
+          width: "100%",
+          position: "absolute",
+          left: 0,
+          bottom: 0,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "1.5rem 0 1.2rem 0",
+          gap: "0.7rem",
+        }}
+      >
+        <style>{`
+          @media (min-width: 640px) {
+            .flixd-footer-links {
+              flex-direction: row !important;
+              gap: 2.5rem !important;
+            }
+          }
+        `}</style>
+        <div
+          className="flixd-footer-links"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "0.7rem",
+          }}
+        >
+          <span style={{ color: "#B0B3C7", fontSize: "1rem" }}>
+            Have questions? Contact{" "}
+            <a
+              href="mailto:support@flixd.app"
+              style={{
+                color: "#B0B3C7",
+                textDecoration: "underline",
+                fontSize: "1rem",
+              }}
+            >
+              support@flixd.app
+            </a>
+          </span>
+          <Link
+            href="/privacy-policy"
+            className="flixd-privacy-link border border-[#23264A] rounded-lg px-3 py-1 text-[#B0B3C7] transition-colors duration-200 hover:border-[#A3BBD3] hover:text-[#A3BBD3]"
+            style={{ fontSize: "0.95rem", textDecoration: "none" }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Privacy Policy
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
       </footer>
-    </div>
+    </main>
   );
 }
