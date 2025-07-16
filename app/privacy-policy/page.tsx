@@ -155,7 +155,7 @@ export default function PrivacyPolicy() {
             marginBottom: "1.5rem",
           }}
         >
-          We don't sell your personal data to any third parties.
+          We don&apos;t sell your personal data to any third parties.
         </p>
 
         <h2
